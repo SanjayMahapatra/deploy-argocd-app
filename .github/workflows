@@ -1,1 +1,16 @@
-my first workflow
+name: Dev CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "dev","main" ]
+
+
+     
+# 🔹 2. DEV Approval
+  approve-dev:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: dev   # 👈 configure in GitHub UI
+
+  
