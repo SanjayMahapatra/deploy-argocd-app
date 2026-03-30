@@ -1,1 +1,14 @@
-my first changes
+name: Template Validation
+on:
+  pull_request_target:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
